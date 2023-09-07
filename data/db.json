@@ -1,0 +1,46 @@
+{
+    "careers": [
+      {
+        "id": 1,
+        "title": "Senior React Developer",
+        "salary": 50000,
+        "location": "Trichy, TN"
+      },
+      {
+        "id": 2,
+        "title": "Plumber",
+        "salary": 40000,
+        "location": "Chennai"
+      },
+      {
+        "id": 3,
+        "title": "Gym Leader",
+        "salary": 75000,
+        "location": "Bengalore"
+      },
+      {
+        "id": 4,
+        "title": "Vue Developer",
+        "salary": 40000,
+        "location": "Madurai, TN"
+      },
+      {
+        "id": 5,
+        "title": "Tutorial Maker",
+        "salary": 35000,
+        "location": "Hydrapad, TS"
+      },
+      {
+        "id": 6,
+        "title": "Website Manager",
+        "salary": 50000,
+        "location": "Coimbatore, TN"
+      },
+      {
+        "id": 7,
+        "title": "Food Tester",
+        "salary": 30000,
+        "location": "Tirunelveli, TN"
+      }
+    ]
+  }
