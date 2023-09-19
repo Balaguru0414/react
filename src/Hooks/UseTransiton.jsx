@@ -1,35 +1,28 @@
 import React, { useState, useTransition } from "react";
 
-const UseTransiton = () => {
-  const [isPending, startTransition] = useTransition();
-
-  const [item, setItem] = useState();
+const UseTransition = () => {
+  const [text, setText] = useState("");
   const [list, setList] = useState([]);
+  const [tarnsition, setTransition] = useTransition();
 
   const handleChange = (e) => {
-    setItem(e.target.value);
+    setText(e.target.value);
 
-    startTransition(() => {
-      const l = [];
+    setTransition(() => {
+      const arr = [];
       for (let i = 0; i < 20000; i++) {
-        l.push(e.target.value);
+        arr.push(e.target.value);
       }
-      setList(l);
+      setList(arr);
     });
   };
-
   return (
     <div>
-      <input type="text" value={item} onChange={handleChange} /> <br /> <br />
-      {isPending ? (
-        <h1>Loading...</h1>
-      ) : (
-        list.map((item, index) => {
-          return <div key={index}>{item}</div>;
-        })
-      )}
+      <input type="text" value={text} onChange={handleChange} />
+      {/* <h1>{text}</h1> */}
+      {tarnsition ? <h1>Loading...</h1> : list.map((el) => <h1>{el}</h1>)}
     </div>
   );
 };
 
-export default UseTransiton;
+export default UseTransition;
