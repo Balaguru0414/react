@@ -1,3 +1,23 @@
+import { useRef, useState } from "react";
+
+export default function Counter() {
+  const [count, setCount] = useState(0);
+  let ref = useRef(0);
+
+  function handleClick() {
+    // alert(ref.current);
+  }
+
+  return (
+    <>
+      <p>{count}</p>
+      <button onClick={handleClick}>Click me!</button>
+    </>
+  );
+}
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 import { useEffect } from "react";
 import { useRef } from "react";
 
@@ -25,6 +45,60 @@ const UseRef = () => {
       <h1 ref={head}>Hello World</h1>
       <button onClick={change}>Change Color</button>
     </div>
+  );
+};
+
+export default UseRef;
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+import React, { useEffect, useRef, useState } from "react";
+
+const UseRef = () => {
+  const [name, setName] = useState("");
+  const [counter, setCounter] = useState(0);
+  const input = useRef();
+  const prev = useRef();
+  // console.log(input);
+  // useEffect(() => {
+  //   console.log(input);
+  // });
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    setName("");
+    input.current.focus();
+    input.current.value = "Hello";
+  };
+
+  const randomNo = () => {
+    const random = Math.ceil(Math.random() * 100);
+    setCounter(random);
+    prev.current = counter;
+  };
+
+  return (
+    <>
+      <form>
+        <input
+          ref={input}
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <button onClick={handleClick}>Submit</button>
+      </form>
+      <div>
+        <h1>name : {name}</h1>
+      </div>
+      {/* Counter */}
+      <div>
+        <h1>random counter : {counter}</h1>
+        <h2>Previous Counter : {prev.current}</h2>
+        <button onClick={randomNo}>Generate</button>
+      </div>
+    </>
   );
 };
 
