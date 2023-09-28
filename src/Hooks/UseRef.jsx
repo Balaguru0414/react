@@ -1,20 +1,20 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 export default function Counter() {
-  const [count, setCount] = useState(0);
   let ref = useRef(0);
 
   function handleClick() {
-    // alert(ref.current);
+    ref.current = ref.current + 1;
+    alert(ref.current);
   }
 
   return (
     <>
-      <p>{count}</p>
       <button onClick={handleClick}>Click me!</button>
     </>
   );
 }
+
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
