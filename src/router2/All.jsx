@@ -230,7 +230,7 @@ const ProductLayout = () => {
       <input
         type="number"
         value={number}
-        // onChange={(e) => setNumber({ q: e.target.value })}
+        // onChange={(e) => setNumber( e.target.value )}
         onChange={(e) => setSearch({ q: e.target.value })}
       />
     </div>
