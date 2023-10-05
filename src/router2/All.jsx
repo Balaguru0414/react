@@ -220,8 +220,12 @@ const ProductLayout = () => {
   // const [number, setNumber] = useState(3);
   const [search, setSearch] = useSearchParams({ q: 3 });
   const number = search.get("q");
+
   return (
     <div>      
+      <NavLink to={`/products/${number}`}>
+        Product {number}
+      </NavLink>
       {/* <Outlet /> */}
       <input
         type="number"
