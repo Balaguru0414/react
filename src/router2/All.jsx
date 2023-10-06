@@ -248,3 +248,38 @@ export default ProductLayout;
 <Link to='/' state='I from home'></Link>
 const location = useLocation();
 console.log(location);
+
+// ================== Version 6.4 -- createBrowserRouter, createRoutesFromElements, RouterProvider ==================
+
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
+
+// Pages
+import Home from "./pages/Home";
+import About from "./pages/About";
+import NotFound from "./pages/NotFound";
+
+// Layout
+import RootLayout from "./layout/RootLayout";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    // parent route
+    <Route path="/" element={<RootLayout />}>
+      {/* child route */}
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="*" element={<NotFound />} />
+    </Route>
+  )
+);
+
+const RouterApp = () => {
+  return <RouterProvider router={router} />;
+};
+
+export default RouterApp;
