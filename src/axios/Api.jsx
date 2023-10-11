@@ -18,15 +18,14 @@ const Api = () => {
   }, []);
 
   // ============== Add User ==============
-  // const postUser = () => {
-  //   axios
-  //     .post("https://jsonplaceholder.typicode.com/users", {
-  //       id: id++,
-  //       name: name,
-  //     })
-  //     .then((res) => setUsers([...users, res.data]));
-  //   setName("");
-  // };
+  const postUser = () => {
+    axios
+      .post("https://jsonplaceholder.typicode.com/users", {
+        name: name,
+      })
+      .then((res) => setUsers([...users, res.data]));
+    setName("");
+  };
 
   // ============== Update User ==============
   const updateUser = () => {
