@@ -92,8 +92,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const schema = yup.object().shape({
-  firstname: yup.string().required(),
-  lastname: yup.string().required(),
+  username: yup.string().required(),
   email: yup.string().email("Enter valid email").required(),
   phone: yup.number().integer().positive().required(),
   password: yup.string().required().min(4).max(15),
@@ -115,11 +114,8 @@ const Form = () => {
     <>
       <center>
         <form onSubmit={handleSubmit((data) => console.log(data))}>
-          <input {...register("firstname")} placeholder="Enter firstname" />
-          <span>{errors.firstname?.message}</span>
-
-          <input {...register("lastname")} placeholder="Enter lastname" />
-          <span>{errors.lastname?.message}</span>
+          <input {...register("username")} placeholder="Enter username" />
+          <span>{errors.username?.message}</span>
 
           <input {...register("email")} placeholder="Enter email" />
           <span>{errors.email?.message}</span>
