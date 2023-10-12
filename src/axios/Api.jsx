@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-// let id = 11;
-
 const Api = () => {
   const [users, setUsers] = useState([]);
   const [name, setName] = useState("");
