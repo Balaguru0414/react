@@ -1,0 +1,54 @@
+
+input {
+    width: 60%;
+    height: 40px;
+    font-size: 20px;
+    display: block;
+    margin: 10px;    
+    padding-left: 20px;
+}
+.submit {
+    width: 62%;  
+    height: 40px;  
+    margin: 10px;
+    background-color: rgb(75, 187, 225);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+.submit:hover{
+    background-color: rgb(56, 139, 166);
+}
+
+.delete {
+    width: 40%;
+    background-color: rgb(219, 71, 51);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    letter-spacing: 1px;
+}
+
+.delete:hover{
+    background-color:  rgb(161, 58, 45);
+}
+
+.users{
+    border: 1px solid black;
+    width: 150px;
+    border-radius: 5px;
+}
+
+table{
+    width: 62%;
+    border-collapse: collapse;
+    text-align: center;
+}
+th,td{
+    padding: 10px 0 10px 0;
+}
