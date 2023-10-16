@@ -68,3 +68,21 @@ const Api = () => {
 };
 
 export default Api;
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+import axios from "axios";
+
+const API = axios.create({
+  baseURL: "https://jsonplaceholder.typicode.com",
+});
+
+export default API;
+import axios from "./axios";
+
+// url
+ axios.get(`/users`).then((res) => setUsers(res.data));
+ axios.get(`/users/1`).then((res) => setUsers(res.data));
+ axios.post(`/users`).then((res) => setUsers(res.data));
+ axios.put(`/users/1`).then((res) => setUsers(res.data));
+ axios.delete(`/users/1`).then((res) => setUsers(res.data));
