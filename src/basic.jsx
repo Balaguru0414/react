@@ -32,3 +32,40 @@ function App() {
     </div>
   );
 }
+/////////////////////////////////////////////////////////////////////////////////////////
+const App = () => {
+  const [state, setState] = useState(["html", "css", "js"]);
+  const [style, setStyle] = useState(false);
+  function handleChange() {
+    const fruits = ["apple", "banana", "mango"];
+    setState(fruits);
+    setStyle(!style);
+  }
+
+  const dark = {
+    background: "black",
+    color: "white",
+  };
+
+  return (
+    <div>
+      <h1 style={style ? {} : dark}>React</h1>
+      <List web={state} />
+      <button onClick={handleChange}>change</button>
+    </div>
+  );
+};
+
+export default App;
+
+function List(props) {
+  const web = props.web;
+
+  return (
+    <ul>
+      <li>{web[0]}</li>
+      <li>{web[1]}</li>
+      <li>{web[2]}</li>
+    </ul>
+  );
+}
